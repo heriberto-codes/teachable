@@ -49,14 +49,9 @@ of published courses within your school, including the following information for
 ```
 
 ## Flow Control
-1️⃣ User clicks button (Frontend)
-     ↓
-2️⃣ JS sends GET request to /fetch_courses (Backend)
-     ↓
-3️⃣ Flask receives request and calls fetch_courses() in api_client.py
-     ↓
-4️⃣ api_client.py calls Teachable API and gets data
-     ↓
-5️⃣ Flask formats it and sends it back as JSON
-     ↓
-6️⃣ Frontend receives JSON and updates the page dynamically
+1. User clicks button (Frontend)
+2. JS sends GET request to /fetch_courses (Backend)
+3. Flask receives request and calls fetch_courses() in api_client.py
+4. api_client.py calls Teachable API and gets data
+5. Flask formats it and sends it back as JSON
+6. Frontend receives JSON and updates the page dynamically
