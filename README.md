@@ -30,7 +30,7 @@ of published courses within your school, including the following information for
 ```
 /teachable_assessment/
 │
-├── main.py               # Application layer (Flask app + routes)
+├── main.py               # Application layer (Flask app + routes + receives requests, returns responses)
 ├── api_client.py         # Integration layer (handles Teachable API requests)
 ├── utils.py              # Logic layer (filtering, formatting, helper logic)
 │
@@ -55,3 +55,21 @@ of published courses within your school, including the following information for
 4. api_client.py calls Teachable API and gets data
 5. Flask formats it and sends it back as JSON
 6. Frontend receives JSON and updates the page dynamically
+
+# TODO DELETE Below
+main.py         →  Application layer (Flask routes)
+api_client.py   →  Integration layer (handles Teachable API requests)
+utils.py        →  Logic layer (filtering, formatting, helper logic)
+
+
+Browser → Flask Route (main.py)
+             ↓
+          fetch data from API
+             ↓
+          send raw JSON → utils.py
+             ↓
+          utils filters & cleans it
+             ↓
+          send clean JSON back to Flask
+             ↓
+          Flask returns final response
