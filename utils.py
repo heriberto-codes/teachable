@@ -96,7 +96,7 @@ def filter_api_courses(data):
             except requests.exceptions.ConnectionError:
                 return jsonify({"error", "Network Error, could not conntect to Teachable API"}), 503
             except requests.exceptions.HTTPError as e:
-                return jsonify({"error": f"HTTP error: {str(e)}"}), response.status_code # type: ignore for now It will break eventually
+                return jsonify({"error": f"HTTP error: {str(e)}"}), response.status_code # type: ignore  / ignore comment is there because response might not be defined in every code path when this line runs.
 
     return published_course_with_student_data
     #TODO remove return statements below
