@@ -79,6 +79,7 @@ As a creator on Teachable’s platform, this application allows you to view info
 5. Cleaned JSON data is returned to Flask.
 6. Flask renders the final response using a Jinja2 template (`index.html`).
 7. The UI displays the list of courses and enrolled students.
+8. Add a loading state from button click to api call to response
 
 ---
 
