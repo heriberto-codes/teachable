@@ -109,3 +109,6 @@ Students Enrolled:
   pytest
   ```
 - Tests cover API client functionality and utility functions ensuring data is fetched and processed correctly.
+
+## AI Usage
+- I used ChatGPT to help with the proof reading of the readme file 
