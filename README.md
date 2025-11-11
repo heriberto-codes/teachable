@@ -28,16 +28,6 @@
 
 ---
 
-## Project Overview
-
-As a creator on Teachable’s platform, this application allows you to view information about your published courses. Using the Public API endpoints, it fetches and displays a list of published courses within your school, including:
-
-- Course name
-- Course heading
-- A list of names and emails of students actively enrolled in each course
-
----
-
 ## Technology Stack
 
 - **Python 3**  
