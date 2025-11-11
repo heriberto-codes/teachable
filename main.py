@@ -15,13 +15,13 @@ app = Flask(__name__)
 # routes below
 @app.route("/")
 def home():
-    return render_template("index.html")
+    return render_template("index.html", context="")
 
 @app.route("/fetch_teachable_api") # type: ignore
 def teachable_api():
     
     # api endpoint:
-    url = "https://developers.teachable.com/v1/courses"
+    fetch_all_course_url = "https://developers.teachable.com/v1/courses"
     
     headers = {
         "accept": "application/json",
@@ -31,11 +31,12 @@ def teachable_api():
     # make the api call
     # I decided to do it in a try/except to handle potential errors gracefully.
     try:
-        response = requests.get(url, headers=headers)
+        response = requests.get(fetch_all_course_url, headers=headers)
         data = response.json()
         cleaned_api_courses = filter_api_courses(data)
         # print(cleaned_api_courses)
-        return jsonify(cleaned_api_courses)
+        # return jsonify(cleaned_api_courses)
+        return render_template("index.html", context=cleaned_api_courses)
     except requests.exceptions.Timeout:
         return jsonify({"error", "The request took to long"}), 504
     except requests.exceptions.ConnectionError:

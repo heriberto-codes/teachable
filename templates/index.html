@@ -20,8 +20,31 @@
         <h1>The Farm School</h1>
       </div>
       <div class='row text-center pt-3'>
-        <div class='col'>
-          <button type="button" class="btn btn-outline-primary">See Available Courses</button>
+        <div class="col">
+          <a href="{{ url_for('teachable_api') }}" class="btn btn-outline-primary">
+            See Available Courses
+          </a>
+        </div>
+        <div class='pt-3'>
+          {% for course in context.published_courses %}
+
+            <table class="table table-bordered border-primary">
+              <thead>
+                <tr>
+                  <th>Course Name</th>
+                  <th>Course Heading</th>
+                  <th>Student Email and Name</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{ course.name }}</td>
+                  <td>{{ course.heading }}</td>
+                  <td>{{ course.students }}</td>
+                </tr>
+              </tbody>
+            </table>
+          {% endfor %}
         </div>
       </div>
     </div>
